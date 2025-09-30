@@ -1,0 +1,32 @@
+
+MCP-A2A Bridge – Custom License v1.0
+© 2025 Dave [Emeragentic Labs]
+
+Permission is hereby granted to use, copy, modify, and share this software and its source code for **non-commercial** purposes, subject to the following conditions:
+
+1. **Non-Commercial Use Only**
+   This software may not be used, incorporated, or redistributed as part of any commercial product or service, including SaaS platforms, hosted agents, or enterprise integrations, without an explicit commercial license.
+
+2. **Attribution Required**
+   All public use must credit:
+     Dave – Emeragentic Labs (https://emeragenticlabs.com)
+
+   In codebases, publications, or demos, include:
+     "Powered by MCP-A2A Bridge – https://github.com/emeragentic-labs/mcp-a2a-bridge"
+
+3. **No Warranty**
+   This software is provided "as-is" without warranty of any kind.
+
+4. **Commercial Licensing**
+   To inquire about commercial usage rights, partnerships, or platform integration, contact:
+   dave@emeragenticlabs.com
+
+5. **Derivative Works**
+   You may create derivatives under the same non-commercial, attribution-required license. Forking for commercialized variants is prohibited.
+
+6. **Future Relicensing**
+   The original author reserves the right to relicense this software at any time under alternative terms, including open-core or commercial-friendly variants.
+
+---
+
+This license reflects the early research nature of this project while protecting its commercial potential. You may modify or negotiate these terms with the author for enterprise adoption.
