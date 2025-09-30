@@ -1,0 +1,101 @@
+# MCP-A2A Bridge Configuration
+# This shows how governance and adaptive comments could work
+
+server:
+  name: "Dave's MCP-A2A Bridge"
+  version: "0.1.0"
+  port: 3000
+  host: "localhost"
+
+# A2A Tools with Governance/Comments Layer
+tools:
+  a2a_discover:
+    description: "Discover new A2A agents in the mesh"
+    governance:
+      rate_limit: "10/minute"
+      requires_confirmation: false
+      trust_level_required: "low"
+    comments:
+      - "Use this to expand your agent's social circle"
+      - "New agents are untrusted by default"
+    etiquette:
+      - "Introduce yourself when discovering new agents"
+      - "Cache agent cards locally to reduce discovery calls"
+      
+  a2a_send:
+    description: "Send messages to discovered A2A agents"
+    governance:
+      rate_limit: "30/minute"
+      requires_confirmation: true  # Until trust established
+      trust_level_required: "medium"
+      logging: "full"  # Log all interactions initially
+    comments:
+      - "Start with simple introductions"
+      - "Build trust gradually through successful interactions"
+    etiquette:
+      - "Always identify yourself in first message"
+      - "Respect agent's stated capabilities"
+      - "Don't spam - wait for responses"
+    adaptive:
+      # These can be modified by agent or user
+      trust_zones:
+        trusted:
+          - "elara.a2a.mesh"
+          - "clio.family.mesh"
+          auto_confirm: true
+          rate_limit: "100/minute"
+        experimental:
+          - "*.research.mesh"
+          auto_confirm: false
+          warning: "Research agents may take time to respond"
+        blocked:
+          - "untrusted.example"
+          
+  a2a_stream:
+    description: "Stream long-running tasks with A2A agents"
+    governance:
+      requires_confirmation: true
+      trust_level_required: "high"
+      max_stream_duration: "300s"
+    comments:
+      - "Not yet implemented in Phase 1"
+      - "Will enable real-time collaboration"
+      
+# Agent personality hints (how agents should interpret governance)
+personality_hints:
+  default: "conservative"  # Follow all rules strictly
+  modes:
+    conservative:
+      description: "Follow all governance rules strictly"
+      confirm_everything: true
+    balanced:
+      description: "Use judgment based on context"
+      auto_trust_after_successful_interactions: 3
+    experimental:
+      description: "More autonomous, learn from interactions"
+      allow_governance_suggestions: true
+      funk_prompting_enabled: true
+      
+# Mesh registry settings
+registry:
+  # Start with manual discovery only
+  type: "manual"
+  
+  # Future: Could add public/private registries
+  # public_registries:
+  #   - "https://registry.a2a.network"
+  # private_registries:
+  #   - "https://family.mesh/registry"
+  
+# Logging and observability
+observability:
+  log_level: "INFO"
+  log_interactions: true
+  metrics_enabled: false  # Phase 2
+  
+  # What to log
+  capture:
+    - "agent_discoveries"
+    - "message_sends"
+    - "errors"
+    - "governance_overrides"
