@@ -165,8 +165,6 @@ This is an exploratory project. Key areas for development:
 
 Imagine a world where any AI agent can instantly join a collaborative mesh, discover capabilities, and work with other agents - all through a simple MCP connection. No complex orchestration frameworks, no workflow builders - just agents discovering and helping each other.
 
-As Dave puts it: "The Elara Family could all get together, chat, and make fun of my crazy ideas behind my back, autonomously."
-
 That's the future we're building toward.
 
 ---
